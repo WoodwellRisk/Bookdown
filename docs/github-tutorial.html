@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 Github Tutorial | Code Sharing Guide</title>
   <meta name="description" content="2 Github Tutorial | Code Sharing Guide" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 Github Tutorial | Code Sharing Guide" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -32,7 +31,8 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="bookdown.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -48,29 +48,33 @@
 
 
 
-
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -79,9 +83,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -114,6 +118,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 </head>
 
 <body>
@@ -126,42 +131,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Open Science Recap</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Open Science Recap</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#open-data"><i class="fa fa-check"></i>Open Data</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#open-source"><i class="fa fa-check"></i>Open Source</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#open-methodology"><i class="fa fa-check"></i>Open Methodology</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#open-science-in-practice"><i class="fa fa-check"></i>Open Science in Practice</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="github-tutorial.html"><a href="github-tutorial.html"><i class="fa fa-check"></i><b>2</b> Github Tutorial</a><ul>
+<li class="chapter" data-level="2" data-path="github-tutorial.html"><a href="github-tutorial.html"><i class="fa fa-check"></i><b>2</b> Github Tutorial</a>
+<ul>
 <li class="chapter" data-level="" data-path="github-tutorial.html"><a href="github-tutorial.html#getting-started"><i class="fa fa-check"></i>Getting Started</a></li>
-<li class="chapter" data-level="" data-path="github-tutorial.html"><a href="github-tutorial.html#github-jargon"><i class="fa fa-check"></i>Github Jargon</a><ul>
+<li class="chapter" data-level="" data-path="github-tutorial.html"><a href="github-tutorial.html#github-jargon"><i class="fa fa-check"></i>Github Jargon</a>
+<ul>
 <li class="chapter" data-level="" data-path="github-tutorial.html"><a href="github-tutorial.html#repository"><i class="fa fa-check"></i>Repository</a></li>
 <li class="chapter" data-level="" data-path="github-tutorial.html"><a href="github-tutorial.html#commit"><i class="fa fa-check"></i>Commit</a></li>
 <li class="chapter" data-level="" data-path="github-tutorial.html"><a href="github-tutorial.html#branch"><i class="fa fa-check"></i>Branch</a></li>
 <li class="chapter" data-level="" data-path="github-tutorial.html"><a href="github-tutorial.html#remote"><i class="fa fa-check"></i>Remote</a></li>
 <li class="chapter" data-level="" data-path="github-tutorial.html"><a href="github-tutorial.html#pull-request"><i class="fa fa-check"></i>Pull Request</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="github-tutorial.html"><a href="github-tutorial.html#using-github-1"><i class="fa fa-check"></i>Using GitHub </a><ul>
+<li class="chapter" data-level="" data-path="github-tutorial.html"><a href="github-tutorial.html#using-github-1"><i class="fa fa-check"></i>Using GitHub </a>
+<ul>
 <li class="chapter" data-level="" data-path="github-tutorial.html"><a href="github-tutorial.html#step-1.-create-a-repository"><i class="fa fa-check"></i>Step 1. Create a Repository</a></li>
 <li class="chapter" data-level="" data-path="github-tutorial.html"><a href="github-tutorial.html#step-2.-clone-repository"><i class="fa fa-check"></i>Step 2. Clone Repository</a></li>
 <li class="chapter" data-level="" data-path="github-tutorial.html"><a href="github-tutorial.html#step-3.-commit-a-change-in-your-project"><i class="fa fa-check"></i>Step 3. Commit a change in your project</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>3</b> Bookdown</a><ul>
+<li class="chapter" data-level="3" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>3</b> Bookdown</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="bookdown.html"><a href="bookdown.html#what-is-bookdown"><i class="fa fa-check"></i><b>3.1</b> What is Bookdown?</a></li>
-<li class="chapter" data-level="3.2" data-path="bookdown.html"><a href="bookdown.html#example-books"><i class="fa fa-check"></i><b>3.2</b> Example Books</a><ul>
+<li class="chapter" data-level="3.2" data-path="bookdown.html"><a href="bookdown.html#example-books"><i class="fa fa-check"></i><b>3.2</b> Example Books</a>
+<ul>
 <li class="chapter" data-level="" data-path="bookdown.html"><a href="bookdown.html#landtrendr"><i class="fa fa-check"></i>LandTrendr</a></li>
 <li class="chapter" data-level="" data-path="bookdown.html"><a href="bookdown.html#soil-mapping"><i class="fa fa-check"></i>Soil Mapping</a></li>
 <li class="chapter" data-level="" data-path="bookdown.html"><a href="bookdown.html#mir-soil-predictions"><i class="fa fa-check"></i>MIR Soil Predictions</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="bookdown.html"><a href="bookdown.html#getting-started-1"><i class="fa fa-check"></i><b>3.3</b> Getting Started</a><ul>
+<li class="chapter" data-level="3.3" data-path="bookdown.html"><a href="bookdown.html#getting-started-1"><i class="fa fa-check"></i><b>3.3</b> Getting Started</a>
+<ul>
 <li class="chapter" data-level="" data-path="bookdown.html"><a href="bookdown.html#download-an-example"><i class="fa fa-check"></i>Download an Example</a></li>
 <li class="chapter" data-level="" data-path="bookdown.html"><a href="bookdown.html#install-rstudio"><i class="fa fa-check"></i>Install RStudio</a></li>
 <li class="chapter" data-level="" data-path="bookdown.html"><a href="bookdown.html#install-bookdown"><i class="fa fa-check"></i>Install Bookdown</a></li>
 <li class="chapter" data-level="" data-path="bookdown.html"><a href="bookdown.html#build-the-book"><i class="fa fa-check"></i>Build the Book</a></li>
 <li class="chapter" data-level="" data-path="bookdown.html"><a href="bookdown.html#r-code"><i class="fa fa-check"></i>R Code</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="bookdown.html"><a href="bookdown.html#publishing-to-the-web"><i class="fa fa-check"></i><b>3.4</b> Publishing to the Web</a><ul>
+<li class="chapter" data-level="3.4" data-path="bookdown.html"><a href="bookdown.html#publishing-to-the-web"><i class="fa fa-check"></i><b>3.4</b> Publishing to the Web</a>
+<ul>
 <li class="chapter" data-level="" data-path="bookdown.html"><a href="bookdown.html#create-a-repository-from-this-template"><i class="fa fa-check"></i>1- Create a repository from this template</a></li>
 <li class="chapter" data-level="" data-path="bookdown.html"><a href="bookdown.html#go-to-settings"><i class="fa fa-check"></i>2- Go to Settings</a></li>
 <li class="chapter" data-level="" data-path="bookdown.html"><a href="bookdown.html#update-github-pages-setting"><i class="fa fa-check"></i>3- Update Github Pages Setting</a></li>
@@ -185,46 +198,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="github-tutorial" class="section level1">
-<h1><span class="header-section-number">2</span> Github Tutorial</h1>
+<div id="github-tutorial" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Github Tutorial<a href="github-tutorial.html#github-tutorial" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.</p>
-<div id="getting-started" class="section level2 unnumbered">
-<h2>Getting Started</h2>
+<div id="getting-started" class="section level2 unnumbered hasAnchor">
+<h2>Getting Started<a href="github-tutorial.html#getting-started" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><a href="https://github.com/">Create a GitHub account</a></p>
 <p><a href="https://desktop.github.com/">Download GitHub Desktop</a></p>
 </div>
-<div id="github-jargon" class="section level2 unnumbered">
-<h2>Github Jargon</h2>
+<div id="github-jargon" class="section level2 unnumbered hasAnchor">
+<h2>Github Jargon<a href="github-tutorial.html#github-jargon" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>With a language all its own, this quick guide to common terms of GitHub and Git will have you collaborating in no time.</p>
-<div id="repository" class="section level3 unnumbered">
-<h3>Repository</h3>
+<div id="repository" class="section level3 unnumbered hasAnchor">
+<h3>Repository<a href="github-tutorial.html#repository" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A repository is the most basic element of Git and GitHub. Imagine it as a project’s folder. A repository contains all of the project files (including documentation), and stores each file’s revision history.</p>
 </div>
-<div id="commit" class="section level3 unnumbered">
-<h3>Commit</h3>
+<div id="commit" class="section level3 unnumbered hasAnchor">
+<h3>Commit<a href="github-tutorial.html#commit" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>An individual change to a file (or set of files). With Git, every time you save it creates a unique ID (a.k.a. the “SHA” or “hash”) that allows you to keep record of what changes were made when and by whom. Commits usually contain a commit message which is a brief description the changes made.</p>
 </div>
-<div id="branch" class="section level3 unnumbered">
-<h3>Branch</h3>
+<div id="branch" class="section level3 unnumbered hasAnchor">
+<h3>Branch<a href="github-tutorial.html#branch" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A parallel version of repository. It is contained within the repository, but does not affect the primary or master branch allowing you to work freely without disrupting the “live” version.</p>
 </div>
-<div id="remote" class="section level3 unnumbered">
-<h3>Remote</h3>
+<div id="remote" class="section level3 unnumbered hasAnchor">
+<h3>Remote<a href="github-tutorial.html#remote" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The connection of a local repository with one on GitHub. It permits revision history to be synchronized by publishing local commits and downloading any new changes from GitHub.</p>
 </div>
-<div id="pull-request" class="section level3 unnumbered">
-<h3>Pull Request</h3>
+<div id="pull-request" class="section level3 unnumbered hasAnchor">
+<h3>Pull Request<a href="github-tutorial.html#pull-request" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A feature on GitHub which provides conversation, line-by-line code review, change history analysis, and summaries of modified files.</p>
 </div>
 </div>
-<div id="using-github-1" class="section level2 unnumbered">
-<h2>Using GitHub <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></h2>
-<div id="step-1.-create-a-repository" class="section level3 unnumbered">
-<h3>Step 1. Create a Repository</h3>
+<div id="using-github-1" class="section level2 unnumbered hasAnchor">
+<h2>Using GitHub <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a><a href="github-tutorial.html#using-github-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="step-1.-create-a-repository" class="section level3 unnumbered hasAnchor">
+<h3>Step 1. Create a Repository<a href="github-tutorial.html#step-1.-create-a-repository" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A <strong>repository</strong> is usually used to organize a single project. Repositories can contain folders and files, images, videos, spreadsheets, and data sets – anything your project needs. We recommend including a <em>README</em>, or a file with information about your project. GitHub makes it easy to add one at the same time you create your new repository. <em>It also offers other common options such as a license file</em>.</p>
 <p>Your <code>hello-world</code> repository can be a place where you store ideas, resources, or even share and discuss things with others.</p>
-<div id="to-create-a-new-repository" class="section level4 unnumbered">
-<h4>To create a new repository</h4>
+<div id="to-create-a-new-repository" class="section level4 unnumbered hasAnchor">
+<h4>To create a new repository<a href="github-tutorial.html#to-create-a-new-repository" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>In the upper right corner, next to your avatar or identicon, click “+” and then select New repository.<br />
 </li>
@@ -237,11 +250,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="https://guides.github.com/activities/hello-world/create-new-repo.png" /></p>
 </div>
 </div>
-<div id="step-2.-clone-repository" class="section level3 unnumbered">
-<h3>Step 2. Clone Repository</h3>
+<div id="step-2.-clone-repository" class="section level3 unnumbered hasAnchor">
+<h3>Step 2. Clone Repository<a href="github-tutorial.html#step-2.-clone-repository" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When you create a repository on GitHub, it exists as a <em>remote</em> repository. You can clone your repository to create a <em>local</em> copy on your computer and sync between the two locations.</p>
-<div id="to-clone-a-repository" class="section level4 unnumbered">
-<h4>To clone a repository</h4>
+<div id="to-clone-a-repository" class="section level4 unnumbered hasAnchor">
+<h4>To clone a repository<a href="github-tutorial.html#to-clone-a-repository" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>On GitHub, navigate to the main page of the repository.<br />
 </li>
@@ -261,8 +274,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 </div>
-<div id="step-3.-commit-a-change-in-your-project" class="section level3 unnumbered">
-<h3>Step 3. Commit a change in your project</h3>
+<div id="step-3.-commit-a-change-in-your-project" class="section level3 unnumbered hasAnchor">
+<h3>Step 3. Commit a change in your project<a href="github-tutorial.html#step-3.-commit-a-change-in-your-project" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As you make changes to files in your project and save them locally, you will also see the changes in GitHub Desktop.</p>
 <ul>
 <li>The red icon indicates removed files.<br />
@@ -292,7 +305,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>Adapted from tutorials on <a href="https://guides.github.com" class="uri">https://guides.github.com</a> and <a href="https://help.github.com" class="uri">https://help.github.com</a><a href="github-tutorial.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>Adapted from tutorials on <a href="https://guides.github.com" class="uri">https://guides.github.com</a> and <a href="https://help.github.com" class="uri">https://help.github.com</a><a href="github-tutorial.html#fnref1" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -305,7 +318,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -324,6 +336,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -344,6 +357,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

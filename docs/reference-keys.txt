@@ -1,0 +1,7 @@
+open-science-recap
+github-tutorial
+bookdown
+what-is-bookdown
+example-books
+getting-started-1
+publishing-to-the-web
